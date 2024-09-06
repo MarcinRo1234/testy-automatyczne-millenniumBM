@@ -1,0 +1,22 @@
+{
+  "name": "nowe-testy-cypress",
+  "version": "1.0.0",
+  "description": "Podstawowe testy Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Cypress",
+    "testy",
+    "Millennium",
+    "Dom",
+    "Maklerski"
+  ],
+  "author": "MR",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.13.2"
+  }
+}
+
