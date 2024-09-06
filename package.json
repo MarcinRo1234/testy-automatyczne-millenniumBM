@@ -4,7 +4,7 @@
   "description": "Podstawowe testy Cypress",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "kokos": "cypress run --spec cypress/e2e/HomePageMillenniumBM.cy.js"
   },
   "keywords": [
     "Cypress",
