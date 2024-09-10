@@ -206,7 +206,7 @@ describe("Footer test", () => {
 describe("social footer", () =>{
   it("test pierwszej ikonki", () => {
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_FOOTER_2023_ div.bm-nav-footer__btm ul.bm-nav-footer__btm__socials li wc-button-link a").invoke('removeAttr', 'target').first().click();
-      cy.origin('https://www.bankmillennium.pl/', () => {
+      cy.url('https://www.bankmillennium.pl/', () => {
           // cy.get("a span.css-1jxf684.r-bcqeeo.r-1ttztb7.r-qvutc0.r-poiln3").eq(9).click();
           cy.location().should(location => {
         expect(location.origin).to.eq("https://www.bankmillennium.pl");
