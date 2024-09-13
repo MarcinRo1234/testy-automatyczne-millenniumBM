@@ -4,7 +4,7 @@
   "description": "Podstawowe testy Cypress",
   "main": "index.js",
   "scripts": {
-    "kokos": "cypress run --spec cypress/e2e/HomePageMillenniumBM.cy.js"
+    "kokos": "cypress run --spec cypress/e2e/HomePageMillenniumBM.cy.js --browser edge"
   },
   "keywords": [
     "Cypress",
