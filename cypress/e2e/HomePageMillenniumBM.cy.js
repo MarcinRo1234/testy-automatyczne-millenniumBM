@@ -119,7 +119,11 @@ describe("Home Page Main Menu test", () => {
 describe("Komponent Banner_2023", () => {
     it("Button checking", () => {
       cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_x5aSOhQRa6l2_ div.mds.bm-banner__btns wc-button").click();
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_x5aSOhQRa6l2_ img").should("have.css", "width", "731px");
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_x5aSOhQRa6l2_ img").should("have.css", "height", "460px");
+        
       cy.location("pathname").should("eq", "/rachunki-maklerskie");
+      
     })
   })
 
