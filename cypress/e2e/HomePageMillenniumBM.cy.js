@@ -1,8 +1,6 @@
 /// <reference types ="cypress" />
 
-// const { describe } = require("mocha");
 
-// const { beforeEach } = require("mocha")
 beforeEach (() => {
   cy.visit('https://www.millenniumbm.pl/');
   cy.viewport(1920, 1080);
@@ -14,13 +12,8 @@ describe('Home Page menu testing - righ top corner', () => {
     
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.bm-tertiary-menu.desktop-only li a.mds.bm-tertiary-menu__item").eq(0).click();
     cy.location("pathname").should("eq", "/pum");
-    // cy.wait(3000);
-    // cy.get("div#portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_JRaq8MoypXpi div.bm-facilities-map__sidebar div.bm-facilities-map__search-and-filters div.bm-search-input").type("Warszawa {enter}");
-    // cy.wait(3000);
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.bm-tertiary-menu.desktop-only li a.mds.bm-tertiary-menu__item").last().click();
-    // cy.location("pathname").contains("/en/bsp/");
     cy.url().should("include", "/en/bsp?languageChange=true")
-    // cy.wait(3000);
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_FOOTER_2023_ div.mds.bm-nav-footer__btm").scrollIntoView();
     
   })
@@ -35,20 +28,15 @@ describe('Home Page menu testing - righ top corner', () => {
 describe("Second menu test - search", () => {
   it("Test Search login", ()=> {
     cy.get('header.mds.bm-menu-header div.mds.bm-menu-header__right button.mds.bm-search-login__btn.desktop-only').click();
-    cy.wait(3000);
+    // cy.wait(3000);
     cy.get("div.bm-search-curtain__curtain-container div.bm-search-curtain__content div.mds.bm-search div.bm-search__input").eq(1).type("konto {enter}", {delay: 500});
-    // cy.wait(3000);
-    // cy.get("p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_7hVjfLupABiI_").should("be.visible");
     cy.url().should("include", "/wyniki-wyszukiwania?q=konto")
-    // cy.wait(3000);
-    // cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ div.mds.bm-menu-header__right span.mds.desktop-only").click();
-    // cy.wait(3000);
+
 
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_7hVjfLupABiI_ div.gsc-results.gsc-webResult table.gsc-table-result td.gsc-table-cell-snippet-close div.gs-title.gsc-table-cell-thumbnail.gsc-thumbnail-left a").as("SearchListResults");
-    // cy.get("@SearchListResults").first().click();
+
     cy.get("@SearchListResults").should("have.length", 10);
-    // cy.get("@SearchListResults").invoke("removeAttr", "target").first().click()
-    // cy.go("back");
+
   })
 })
 describe("Second menu test - login", () => {
@@ -65,11 +53,7 @@ describe("Second menu test - login", () => {
   })
 })
 describe("Home Page Main Menu test", () => {
-  // beforeEach (() => {
-  //   cy.visit('https://www.millenniumbm.pl/');
-  //   cy.get("div#cookie-m-wrapper-n div.cookies-m-buttons a#allow-cookies-m-btn").click();
-  //   cy.viewport(1920, 1080);
-  // })
+
   it("Main Menu - first button", () => {
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.mds.bm-secondary-menu.desktop-only li a.mds.bm-secondary-menu__item").eq(0).click();
     cy.location("pathname").should("eq", "/rachunki-maklerskie");
@@ -113,20 +97,60 @@ describe("Home Page Main Menu test", () => {
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.bm-tertiary-menu.desktop-only li a.mds.bm-tertiary-menu__item").last().click();
     cy.url().should("include", "/en/analyses-and-education?languageChange=true")
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_FOOTER_2023_ div.mds.bm-nav-footer__btm").scrollIntoView();
-        cy.wait(5000);
+        // cy.wait(5000);
   })
   })
 describe("Komponent Banner_2023", () => {
-    it("Button checking", () => {
-      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_x5aSOhQRa6l2_ div.mds.bm-banner__btns wc-button").click();
-      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_x5aSOhQRa6l2_ img").should("have.css", "width", "731px");
-      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_x5aSOhQRa6l2_ img").should("have.css", "height", "460px");
-        
-      cy.location("pathname").should("eq", "/rachunki-maklerskie");
+    it("Sprawdzenie wymiarów komponentu", () => {
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_x5aSOhQRa6l2_ div.mds.bm-col-d-12").should("have.css", "width", "1600px")
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_x5aSOhQRa6l2_ div.mds.bm-col-d-12").should("have.css", "height", "460px")  
+    })
+    it("Sprawdzenie wymiarów grafiki", () => {
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_x5aSOhQRa6l2_ article.mds.bm-container.bm-container__wider.bm-banner__wrapper picture.mds.bm-banner__img").should("have.css", "width", "731px")
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_x5aSOhQRa6l2_ article.mds.bm-container.bm-container__wider.bm-banner__wrapper picture.mds.bm-banner__img").should("have.css", "height", "460px")
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_x5aSOhQRa6l2_ article.mds.bm-container.bm-container__wider.bm-banner__wrapper picture.mds.bm-banner__img").should("be.visible");
+    })
+    it("Sprawdzenie czcionek", () => {
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_x5aSOhQRa6l2_ div.mds.bm-banner__info.bm-col-d-6.bm-offset-d-1 h1").should("have.css", "font-size", "28px");
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_x5aSOhQRa6l2_ div.mds.bm-banner__info.bm-col-d-6.bm-offset-d-1 h1").should("have.css", "font-family", "Roboto");
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_x5aSOhQRa6l2_ div.mds.bm-banner__info.bm-col-d-6.bm-offset-d-1 h1").should("have.css", "Margin", "0px 0px 20px");
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_x5aSOhQRa6l2_ div.mds.bm-banner__info.bm-col-d-6.bm-offset-d-1 h1").should("have.css", "color", "rgb(46, 46, 46)");
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_x5aSOhQRa6l2_ div.mds.bm-banner__info.bm-col-d-6.bm-offset-d-1 P").should("have.css", "color", "rgb(106, 106, 106)");
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_x5aSOhQRa6l2_ div.mds.bm-banner__info.bm-col-d-6.bm-offset-d-1 P").should("have.css", "font-size", "16px");
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_x5aSOhQRa6l2_ div.mds.bm-banner__info.bm-col-d-6.bm-offset-d-1 P").should("have.css", "font-family", "Roboto");
+    })
+    it("Sprawdzenie wymiarów buttona", () => {
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_x5aSOhQRa6l2_ div.mds.bm-banner__btns wc-button").should("have.css", "width", "184.25px");
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_x5aSOhQRa6l2_ div.mds.bm-banner__btns wc-button").should("have.css", "height", "51px");
+      cy.get(".bm-banner__btns > wc-button > .mds").should("have.css", "background-color", "rgb(189, 0, 79)");
       
     })
+    it("Sprawdzenie buttona - kliknięcie", () => {
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_x5aSOhQRa6l2_ div.mds.bm-banner__btns wc-button").click();
+      cy.location("pathname").should("eq", "/rachunki-maklerskie");
+    })
   })
+describe("Komponent Article 2023", () => {
+    it("Sprawdzenie wymiarów komponentów", () => {
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_Lad3qzY7nBYe_ article.mds.bm-article.bm-container").should("have.css", "width", "1600px");
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_Lad3qzY7nBYe_ article.mds.bm-article.bm-container").should("have.css", "height", "381.15625px");
+    })
+    it("Sprawdzenie wymiarów grafiki", () => {
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_Lad3qzY7nBYe_ picture.bm-col-d-4.bm-offset-d-2.mds.desktop-only img").should("have.css", "width", "520px");
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_Lad3qzY7nBYe_ picture.bm-col-d-4.bm-offset-d-2.mds.desktop-only img").should("have.css", "height", "381.15625px");
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_Lad3qzY7nBYe_ picture.bm-col-d-4.bm-offset-d-2.mds.desktop-only img").should("be.visible");
+    })
+    it("Sprawdzenie czcionek", () => {
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_Lad3qzY7nBYe_ div.mds.bm-article__content.bm-col-d-4 h2").should("have.css", "font-size", "24px");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_Lad3qzY7nBYe_ div.mds.bm-article__content.bm-col-d-4 h2").should("have.css", "font-family", "Roboto, sans-serif");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_Lad3qzY7nBYe_ div.mds.bm-article__content.bm-col-d-4 h2").should("have.css", "color", "rgb(46, 46, 46)");
 
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_Lad3qzY7nBYe_ div.mds.bm-article__content.bm-col-d-4 div.bm-article__description").should("have.css", "font-family", "Roboto, sans-serif");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_Lad3qzY7nBYe_ div.mds.bm-article__content.bm-col-d-4 div.bm-article__description").should("have.css", "color", "rgb(115, 115, 115)");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_Lad3qzY7nBYe_ div.mds.bm-article__content.bm-col-d-4 div.bm-article__description").should("have.css", "font-size", "16px");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_Lad3qzY7nBYe_ div.mds.bm-article__content.bm-col-d-4 div.bm-article__description").should("have.css", "margin", "20px 0px");
+  })
+})
 
 describe("Komponent PROMO_BOX_2023", () => {
     it("First button test", () => {
@@ -140,7 +164,33 @@ describe("Komponent PROMO_BOX_2023", () => {
       cy.location("pathname").should("eq", "/emitenci-i-akcjonariusze");
     })
   })
-describe("Komponent ARTICLE_2023", () => {
+describe.only("Komponent ARTICLE_2023", () => {
+  it("Sprawdzenie wymiarów komponentu", () => {
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_BuorUbQq9bsS_ article.mds.bm-article.bm-container").should("have.css", "width", "1600px");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_BuorUbQq9bsS_ article.mds.bm-article.bm-container").should("have.css", "height", "403px");
+  })
+  it("Sprawdzenie wymiarów grafiki", () => {
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_BuorUbQq9bsS_ picture.bm-col-d-4.bm-offset-d-2.mds.desktop-only img").should("have.css", "width", "520px");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_BuorUbQq9bsS_ picture.bm-col-d-4.bm-offset-d-2.mds.desktop-only img").should("have.css", "height", "381.15625px");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_BuorUbQq9bsS_ picture.bm-col-d-4.bm-offset-d-2.mds.desktop-only img").should("be.visible");
+  })
+  it("Sprawdzenie czcionek", () => {
+  cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_BuorUbQq9bsS_ div.mds.bm-article__content.bm-col-d-4 h2").should("have.css", "font-size", "24px");
+  cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_BuorUbQq9bsS_ div.mds.bm-article__content.bm-col-d-4 h2").should("have.css", "font-family", "Roboto, sans-serif");
+  cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_BuorUbQq9bsS_ div.mds.bm-article__content.bm-col-d-4 h2").should("have.css", "color", "rgb(46, 46, 46)");
+
+  cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_BuorUbQq9bsS_ div.mds.bm-article__content.bm-col-d-4 div.bm-article__description").should("have.css", "font-family", "Roboto, sans-serif");
+  cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_BuorUbQq9bsS_ div.mds.bm-article__content.bm-col-d-4 div.bm-article__description").should("have.css", "color", "rgb(115, 115, 115)");
+  cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_BuorUbQq9bsS_ div.mds.bm-article__content.bm-col-d-4 div.bm-article__description").should("have.css", "font-size", "16px");
+  cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_BuorUbQq9bsS_ div.mds.bm-article__content.bm-col-d-4 div.bm-article__description").should("have.css", "margin", "20px 0px");
+  })
+  it("Sprawdzenie listy i poszczególnych punktów", () => {
+
+  cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_BuorUbQq9bsS_ ul.mds.bm-list").should("have.css", "margin", "0px 0px 20px");
+  cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_BuorUbQq9bsS_ ul.mds.bm-list li").first().should("have.css", "padding", "0px 0px 0px 18px")
+  cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_BuorUbQq9bsS_ ul.mds.bm-list li").first().should("have.css", "margin", "0px 0px 16px")
+
+  })
   it("Checking-button", () => {
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_BuorUbQq9bsS_ div.mds.bm-article__content.bm-col-d-4 div.bm-button-group wc-button-link").click();
   })
@@ -204,22 +254,19 @@ describe("Footer test", () => {
     cy.location("pathname").should("eq", "/zastrzezenia-prawne");
     cy.get("@btmFooterLinks").eq(2).click();
     cy.location("pathname").should("eq", "/mapa-strony");
-    // cy.wait(7000);
   
   })
 describe("social footer", () =>{
   it("test pierwszej ikonki", () => {
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_FOOTER_2023_ div.bm-nav-footer__btm ul.bm-nav-footer__btm__socials li wc-button-link a").invoke('removeAttr', 'target').first().click();
       cy.url('https://www.bankmillennium.pl/', () => {
-          // cy.get("a span.css-1jxf684.r-bcqeeo.r-1ttztb7.r-qvutc0.r-poiln3").eq(9).click();
           cy.location().should(location => {
         expect(location.origin).to.eq("https://www.bankmillennium.pl");
-        // cy.go("back");
-        // cy.url().should("eq", "https://www.bankmillennium.pl");
+
           })
       })
-   })
-   it("test drugiej ikonki", () => {
+   }) 
+  it("test drugiej ikonki", () => {
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_FOOTER_2023_ div.bm-nav-footer__btm ul.bm-nav-footer__btm__socials li wc-button-link a").invoke('removeAttr', 'target').eq(1).click();
     cy.url('https://www.x.com/BankMillennium', () => {
       cy.location().should(location => {
@@ -229,7 +276,7 @@ describe("social footer", () =>{
   
   
     })
-    it("test trzeciej ikonki", () => {
+  it("test trzeciej ikonki", () => {
       cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_FOOTER_2023_ div.bm-nav-footer__btm ul.bm-nav-footer__btm__socials li wc-button-link a").invoke('removeAttr', 'target').eq(2).click();
       cy.url('https://www.youtube.com/user/BankMillennium', () => {
         cy.location().should(location => {
@@ -239,7 +286,7 @@ describe("social footer", () =>{
     
     
       })
-      it("test czwartej ikonki", () => {
+  it("test czwartej ikonki", () => {
         cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_FOOTER_2023_ div.bm-nav-footer__btm ul.bm-nav-footer__btm__socials li wc-button-link a").invoke('removeAttr', 'target').eq(3).click();
         cy.url('https://www.linkedin.com/company/bank-millennium', () => {
           cy.location().should(location => {
