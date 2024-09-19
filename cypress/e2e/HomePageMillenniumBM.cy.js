@@ -164,7 +164,7 @@ describe("Komponent PROMO_BOX_2023", () => {
       cy.location("pathname").should("eq", "/emitenci-i-akcjonariusze");
     })
   })
-describe.only("Komponent ARTICLE_2023", () => {
+describe("Komponent ARTICLE_2023", () => {
   it("Sprawdzenie wymiarów komponentu", () => {
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_BuorUbQq9bsS_ article.mds.bm-article.bm-container").should("have.css", "width", "1600px");
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_BuorUbQq9bsS_ article.mds.bm-article.bm-container").should("have.css", "height", "403px");
