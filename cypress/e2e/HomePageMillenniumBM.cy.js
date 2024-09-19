@@ -140,7 +140,7 @@ describe("Komponent Article 2023", () => {
       cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_Lad3qzY7nBYe_ picture.bm-col-d-4.bm-offset-d-2.mds.desktop-only img").should("have.css", "height", "381.15625px");
       cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_Lad3qzY7nBYe_ picture.bm-col-d-4.bm-offset-d-2.mds.desktop-only img").should("be.visible");
     })
-    it("Sprawdzenie czcionek", () => {
+    it("Sprawdzenie styli - czcionki, wielkości czcionek, kolor czcionek, marginesów", () => {
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_Lad3qzY7nBYe_ div.mds.bm-article__content.bm-col-d-4 h2").should("have.css", "font-size", "24px");
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_Lad3qzY7nBYe_ div.mds.bm-article__content.bm-col-d-4 h2").should("have.css", "font-family", "Roboto, sans-serif");
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_Lad3qzY7nBYe_ div.mds.bm-article__content.bm-col-d-4 h2").should("have.css", "color", "rgb(46, 46, 46)");
@@ -152,7 +152,23 @@ describe("Komponent Article 2023", () => {
   })
 })
 
-describe("Komponent PROMO_BOX_2023", () => {
+describe.only("Komponent PROMO_BOX_2023", () => {
+    it("Sprawdzenie wymiarów komponentu", () => {
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible").should("have.css", "width", "1195px");
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible").should("have.css", "height", "565.296875px");
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible li").first().should("have.css", "width", "385px");
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible").first().should("have.css", "height", "565.296875px");
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible li").last().should("have.css", "width", "385px");
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible").last().should("have.css", "height", "565.296875px");
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible li img").first().should("have.css", "width", "383px")
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible li img").first().should("have.css", "height", "259.296875px")
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible li img").last().should("have.css", "width", "383px")
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible li img").last().should("have.css", "height", "259.296875px")
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible section.bm-promo-box__content").last().should("have.css", "padding", "0px 32px");
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible section.bm-promo-box__content").last().should("have.css", "padding", "0px 32px");
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible section.bm-promo-box__btns").first().should("have.css", "padding", "0px 32px 32px");
+
+    })
     it("First button test", () => {
       cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ ul.bm-col-d-9.bm-promo-box-group-expand__visible li wc-button").eq(0).click();
       cy.location("pathname").should("eq", "/rachunki-maklerskie");
@@ -257,7 +273,7 @@ describe("Footer test", () => {
   
   })
 describe("social footer", () =>{
-  it("test pierwszej ikonki", () => {
+  it("Test pierwszej ikonki - Bank Millennium", () => {
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_FOOTER_2023_ div.bm-nav-footer__btm ul.bm-nav-footer__btm__socials li wc-button-link a").invoke('removeAttr', 'target').first().click();
       cy.url('https://www.bankmillennium.pl/', () => {
           cy.location().should(location => {
@@ -266,7 +282,7 @@ describe("social footer", () =>{
           })
       })
    }) 
-  it("test drugiej ikonki", () => {
+  it("Test drugiej ikonki - Twitter", () => {
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_FOOTER_2023_ div.bm-nav-footer__btm ul.bm-nav-footer__btm__socials li wc-button-link a").invoke('removeAttr', 'target').eq(1).click();
     cy.url('https://www.x.com/BankMillennium', () => {
       cy.location().should(location => {
@@ -276,7 +292,7 @@ describe("social footer", () =>{
   
   
     })
-  it("test trzeciej ikonki", () => {
+  it("Test trzeciej ikonki - Youtube", () => {
       cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_FOOTER_2023_ div.bm-nav-footer__btm ul.bm-nav-footer__btm__socials li wc-button-link a").invoke('removeAttr', 'target').eq(2).click();
       cy.url('https://www.youtube.com/user/BankMillennium', () => {
         cy.location().should(location => {
@@ -286,7 +302,7 @@ describe("social footer", () =>{
     
     
       })
-  it("test czwartej ikonki", () => {
+  it("Test czwartej ikonki - Linkedin", () => {
         cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_FOOTER_2023_ div.bm-nav-footer__btm ul.bm-nav-footer__btm__socials li wc-button-link a").invoke('removeAttr', 'target').eq(3).click();
         cy.url('https://www.linkedin.com/company/bank-millennium', () => {
           cy.location().should(location => {
