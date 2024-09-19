@@ -136,6 +136,7 @@ describe("Komponent Article 2023", () => {
       cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_Lad3qzY7nBYe_ article.mds.bm-article.bm-container").should("have.css", "height", "381.15625px");
     })
     it("Sprawdzenie wymiarów grafiki", () => {
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_Lad3qzY7nBYe_ picture.bm-col-d-4.bm-offset-d-2.mds.desktop-only img").should("be.visible");
       cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_Lad3qzY7nBYe_ picture.bm-col-d-4.bm-offset-d-2.mds.desktop-only img").should("have.css", "width", "520px");
       cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_Lad3qzY7nBYe_ picture.bm-col-d-4.bm-offset-d-2.mds.desktop-only img").should("have.css", "height", "381.15625px");
       cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_Lad3qzY7nBYe_ picture.bm-col-d-4.bm-offset-d-2.mds.desktop-only img").should("be.visible");
@@ -160,14 +161,17 @@ describe("Komponent PROMO_BOX_2023", () => {
       cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible").first().should("have.css", "height", "565.296875px");
       cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible li").last().should("have.css", "width", "385px");
       cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible").last().should("have.css", "height", "565.296875px");
-      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible li img").first().should("have.css", "width", "383px")
-      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible li img").first().should("have.css", "height", "259.296875px")
-      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible li img").last().should("have.css", "width", "383px")
-      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible li img").last().should("have.css", "height", "259.296875px")
+      
       cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible section.bm-promo-box__content").last().should("have.css", "padding", "0px 32px");
       cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible section.bm-promo-box__content").last().should("have.css", "padding", "0px 32px");
       cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible section.bm-promo-box__btns").first().should("have.css", "padding", "0px 32px 32px");
 
+    })
+    it("Sprawdzenie wymiarów grafiki", () => {
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible li img").first().should("have.css", "width", "383px")
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible li img").first().should("have.css", "height", "259.296875px")
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible li img").last().should("have.css", "width", "383px")
+      cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible li img").last().should("have.css", "height", "259.296875px")
     })
     it("First button test", () => {
       cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ ul.bm-col-d-9.bm-promo-box-group-expand__visible li wc-button").eq(0).click();
