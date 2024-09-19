@@ -152,7 +152,7 @@ describe("Komponent Article 2023", () => {
   })
 })
 
-describe.only("Komponent PROMO_BOX_2023", () => {
+describe("Komponent PROMO_BOX_2023", () => {
     it("Sprawdzenie wymiarów komponentu", () => {
       cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible").should("have.css", "width", "1195px");
       cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_0eSEXWkw0G42_ div.mds.bm-container.bm-promo-box-group-expand ul.bm-col-d-9.bm-promo-box-group-expand__visible").should("have.css", "height", "565.296875px");
