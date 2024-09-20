@@ -223,7 +223,21 @@ describe("Komunikaty i ogłoszenia - test", () => {
     cy.get("div#portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_GmbgK9KPm8K2 ul.bm-faq__list li.mds.bm-faq-item span.bm-faq-item__header-chevron i.mds.bm-icon.bm-icon__chevron").as("documentListChevrons");
     cy.get("@documentListChevrons").first().click();
     cy.get("@documentListChevrons").eq(3).click();
-    cy.get("@documentListChevrons").eq(5).click();
+    cy.get("@documentListChevrons").last().click();
+  })
+  it("Sprawdzanie styli nagłówka", () => {
+    cy.get("div#portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_GmbgK9KPm8K2 h2.mds.bm-title--small.bm-faq__title").as("faq_title");
+    cy.get("@faq_title").should("have.css", "margin", "0px 0px 24px");
+    cy.get("@faq_title").should("have.css", "font-size", "24px");
+    cy.get("@faq_title").should("have.css", "line-height", "32px");
+  })
+  it("Sprawdzenie styli elementu listy", () => {
+    cy.get("div#portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_GmbgK9KPm8K2 ul.bm-faq__list li label.bm-faq-item__header").should("have.css", "padding", "20px 0px");
+    cy.get("div#portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_GmbgK9KPm8K2 ul.bm-faq__list li").should("have.css", "border-top", "1px solid rgb(223, 223, 223)");
+  })
+  it("Sprawdzenie elementu listy - ikona", ()=> {
+    cy.get("div#portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_GmbgK9KPm8K2 ul.bm-faq__list li label.bm-faq-item__header span.bm-faq-item__header-icon").should("have.css", "margin-right", "16px");
+    cy.get("div#portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_GmbgK9KPm8K2 ul.bm-faq__list li label.bm-faq-item__header span.bm-faq-item__header-icon").should("be.visible");
   })
 })
 
