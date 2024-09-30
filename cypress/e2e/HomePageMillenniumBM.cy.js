@@ -7,23 +7,109 @@ beforeEach (() => {
   cy.get("div#cookie-m-wrapper-n div.cookies-m-buttons a#allow-cookies-m-btn").click();
   
 })
+
+
 describe('Home Page menu testing - righ top corner', () => {
-  it('First button - Punkty usług maklerskich', () => {
+  it("Right top corner - style", () =>{
+    //Style kontenera
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.bm-tertiary-menu.desktop-only").should("have.css", "justify-content", "flex-end");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.bm-tertiary-menu.desktop-only").should("have.css", "grid-area", "tertiaryMenu");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.bm-tertiary-menu.desktop-only").should("have.css", "margin", "0px");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.bm-tertiary-menu.desktop-only").should("have.css", "column-gap", "24px");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.bm-tertiary-menu.desktop-only").should("have.css", "align-items", "center");
+    // Style elementu listy - 1st element
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.bm-tertiary-menu.desktop-only li a.mds.bm-tertiary-menu__item").first().should("have.css", "font-size", "14px");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.bm-tertiary-menu.desktop-only li a.mds.bm-tertiary-menu__item").first().should("have.css", "line-height", "20px");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.bm-tertiary-menu.desktop-only li a.mds.bm-tertiary-menu__item").first().should("have.css", "column-gap", "8px");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.bm-tertiary-menu.desktop-only li a.mds.bm-tertiary-menu__item").first().should("have.css", "color", "rgb(46, 46, 46)");
+    //Style elementu listy - 2nd element
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.bm-tertiary-menu.desktop-only li a.mds.bm-tertiary-menu__item").eq(1).should("have.css", "font-size", "14px");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.bm-tertiary-menu.desktop-only li a.mds.bm-tertiary-menu__item").eq(1).should("have.css", "line-height", "20px");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.bm-tertiary-menu.desktop-only li a.mds.bm-tertiary-menu__item").eq(1).should("have.css", "column-gap", "8px");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.bm-tertiary-menu.desktop-only li a.mds.bm-tertiary-menu__item").eq(1).should("have.css", "color", "rgb(46, 46, 46)");
+
+  }
+  )
+  it('First button - Punkty usług maklerskich - click', () => {
     
-    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.bm-tertiary-menu.desktop-only li a.mds.bm-tertiary-menu__item").eq(0).click();
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.bm-tertiary-menu.desktop-only li a.mds.bm-tertiary-menu__item").first().click();
     cy.location("pathname").should("eq", "/pum");
+
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.bm-tertiary-menu.desktop-only li a.mds.bm-tertiary-menu__item").last().click();
     cy.url().should("include", "/en/bsp?languageChange=true")
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_FOOTER_2023_ div.mds.bm-nav-footer__btm").scrollIntoView();
     
   })
-  it("Second button - kontakt", () => {
+  it("Second button - kontakt - click", () => {
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.bm-tertiary-menu.desktop-only li a.mds.bm-tertiary-menu__item").eq(1).click();
     cy.location("pathname").should("eq", "/kontakt");
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.bm-tertiary-menu.desktop-only li a.mds.bm-tertiary-menu__item").last().click();
     cy.url().should("include", "/en/contact?languageChange=true")
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_FOOTER_2023_ div.mds.bm-nav-footer__btm").scrollIntoView();
   })
+})
+describe("Secon menu test", () => {
+  it("Style kontenera", () => {
+    cy.get("header.mds.bm-menu-header").as("secondMenu");
+    cy.get("@secondMenu").should("have.css", "padding-top", "24px");
+    cy.get("@secondMenu").should("have.css", "border-top", "1px solid rgb(223, 223, 223)");
+    cy.get("@secondMenu").should("have.css", "margin-top", "12px");
+    cy.get("@secondMenu").should("have.css", "margin-bottom", "36px");
+    cy.get("@secondMenu").should("have.css", "display", "flex");
+    cy.get("@secondMenu").should("have.css", "flex-direction", "row");
+    cy.get("@secondMenu").should("have.css", "justify-content", "space-between");
+    cy.get("@secondMenu").should("have.css", "align-items", "center");
+    cy.get("@secondMenu").should("have.css", "z-index", "1");
+  })
+  it("Style - logo biura maklerskiego", () => {
+    cy.get("header.mds.bm-menu-header img").should("have.css", "width", "212px");
+    cy.get("header.mds.bm-menu-header img").should("have.css", "display", "block");
+    cy.get("header.mds.bm-menu-header img").should("be.visible");
+  })
+  it("Style kontenera - wyszukiwarka i przycisk zaloguj", () => {
+    cy.get("header.mds.bm-menu-header div.mds.bm-search-login").as("searchAndLoginStyle");
+    cy.get("@searchAndLoginStyle").should("have.css", "display", "flex");
+    cy.get("@searchAndLoginStyle").should("have.css", "align-items", "center");
+    cy.get("@searchAndLoginStyle").should("have.css", "display", "flex");
+  })
+  it("Style - lupka", () => {
+    cy.get("header.mds.bm-menu-header button.mds.bm-search-login__btn.desktop-only.bm-search-button").as("searchButton");
+    cy.get("@searchButton").should("have.css", "display", "flex");
+    cy.get("@searchButton").should("have.css", "width", "40px");
+    cy.get("@searchButton").should("have.css", "height", "40px");
+    cy.get("@searchButton").should("have.css", "border", "0px none rgb(46, 46, 46)");
+    cy.get("@searchButton").should("have.css", "margin", "0px 24px 0px 0px");
+    cy.get("@searchButton").should("have.css", "padding", "0px");
+    cy.get("@searchButton").should("have.css", "flex-direction", "column");
+    cy.get("@searchButton").should("have.css", "align-items", "center");
+    cy.get("@searchButton").should("have.css", "justify-content", "center");
+    cy.get("@searchButton").should("have.css", "cursor", "pointer");
+    cy.get("@searchButton").should("have.css", "color", "rgb(46, 46, 46)");
+  });
+  it("Style - przycisk zaloguj", () => {
+    cy.get("header.mds.bm-menu-header button.mds.bm-button.bm-button--primary").as("loginButton");
+    cy.get("@loginButton").should("have.css", "background-color", "rgb(189, 0, 79)");
+    cy.get("@loginButton").should("have.css", "color", "rgb(255, 255, 255)");
+    cy.get("@loginButton").should("have.css", "position", "relative");
+    cy.get("@loginButton").should("have.css", "font-weight", "700");
+    cy.get("@loginButton").should("have.css", "font-size", "16px");
+    cy.get("@loginButton").should("have.css", "overflow", "hidden");
+    cy.get("@loginButton").should("have.css", "transition", "0.4s");
+    cy.get("@loginButton").should("have.css", "height", "51px");
+    cy.get("@loginButton").should("have.css", "padding", "0px 24px");
+    cy.get("@loginButton").should("have.css", "border", "0px none rgb(255, 255, 255)");
+    cy.get("@loginButton").should("have.css", "display", "flex");
+    cy.get("@loginButton").should("have.css", "align-items", "center");
+    cy.get("@loginButton").should("have.css", "justify-content", "center");
+    cy.get("@loginButton").should("have.css", "border-radius", "4px");
+    cy.get("@loginButton").should("have.css", "text-transform", "uppercase");
+    cy.get("@loginButton").should("have.css", "cursor", "pointer");
+    cy.get("@loginButton").should("have.css", "font-size", "16px");
+    cy.get("@loginButton").should("have.css", "line-height", "24px");
+  })
+  // it("Style - modal", () => {
+
+  // })
 })
 describe("Second menu test - search", () => {
   it("Test Search login", ()=> {
@@ -53,7 +139,20 @@ describe("Second menu test - login", () => {
   })
 })
 describe("Home Page Main Menu test", () => {
-
+  it("Main menu - style", () => {
+    //Style kontenera
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.mds.bm-secondary-menu.desktop-only").should("have.css", "justify-content", "space-between");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.mds.bm-secondary-menu.desktop-only").should("have.css", "padding-bottom", "24px");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.mds.bm-secondary-menu.desktop-only").should("have.css", "padding-left", "34px");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.mds.bm-secondary-menu.desktop-only").should("have.css", "padding-right", "34px");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.mds.bm-secondary-menu.desktop-only").should("have.css", "grid-area", "secondaryMenu");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.mds.bm-secondary-menu.desktop-only").should("have.css", "display", "flex");
+    //Style elementów listy
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.mds.bm-secondary-menu.desktop-only li a.mds.bm-secondary-menu__item").first().should("have.css", "font-size", "18px");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.mds.bm-secondary-menu.desktop-only li a.mds.bm-secondary-menu__item").first().should("have.css", "line-height", "24px");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.mds.bm-secondary-menu.desktop-only li a.mds.bm-secondary-menu__item").first().should("have.css", "color", "rgb(46, 46, 46)");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.mds.bm-secondary-menu.desktop-only li a.mds.bm-secondary-menu__item").first().should("have.css", "font-weight", "700");
+  })
   it("Main Menu - first button", () => {
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.mds.bm-secondary-menu.desktop-only li a.mds.bm-secondary-menu__item").eq(0).click();
     cy.location("pathname").should("eq", "/rachunki-maklerskie");
@@ -76,7 +175,7 @@ describe("Home Page Main Menu test", () => {
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.bm-tertiary-menu.desktop-only li a.mds.bm-tertiary-menu__item").last().click();
     cy.url().should("include", "/en/services-and-tools?languageChange=true")
   })
-  it("Main Menu - four button", () => {
+  it("Main Menu - fourth button", () => {
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_COMPLETE_MENU_2023_ ul.mds.bm-secondary-menu.desktop-only li a.mds.bm-secondary-menu__item").eq(3).click();
     cy.location("pathname").should("eq", "/instrumenty");
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_FOOTER_2023_ div.mds.bm-nav-footer__btm").scrollIntoView();
