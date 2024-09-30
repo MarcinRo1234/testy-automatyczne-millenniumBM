@@ -340,7 +340,28 @@ describe("Komunikaty i ogłoszenia - test", () => {
   })
 })
 
-describe("Footer test", () => {
+describe.only("Footer test", () => {
+  it("Style kontenera", () => {
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_FOOTER_2023_ nav.mds.bm-nav-footer.bm-container").as("footerStyle");
+    cy.get("@footerStyle").should("have.css", "max-width", "1600px");
+    cy.get("@footerStyle").should("not.have.css", "margin", "0px auto 48px");
+    cy.get("@footerStyle").should("have.css", "display", "flex");
+    cy.get("@footerStyle").should("have.css", "flex-flow", "row wrap");
+    cy.get("@footerStyle").should("have.css", "column-gap", "20px");
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_FOOTER_2023_ nav.mds.bm-nav-footer").as("footerStyleSecond");
+    cy.get("@footerStyleSecond").should("have.css", "padding", "0px");
+    cy.get("@footerStyleSecond").should("have.css", "margin", "156px 160px 0px");
+    cy.get("@footerStyleSecond").should("have.css", "margin-top", "156px");
+  })
+  it("Style", () => {
+    cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_FOOTER_2023_ div.bm-nav-footer__top").as("styleFooter");
+    cy.get("@styleFooter").should("have.css", "width", "1600px");
+    cy.get("@styleFooter").should("have.css", "border-top", "1px solid rgb(223, 223, 223)");
+    cy.get("@styleFooter").should("have.css", "display", "flex");
+    cy.get("@styleFooter").should("have.css", "justify-content", "space-between");
+    cy.get("@styleFooter").should("have.css", "padding", "32px 74px");
+    cy.get("@styleFooter").should("have.css", "margin", "0px");
+  })
   it("Top footer test", () => {
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_FOOTER_2023_ div.bm-nav-footer__top ul.bm-nav-footer__top__left li wc-button-link").first().click();
     cy.location("pathname").should("eq", "/pum");
