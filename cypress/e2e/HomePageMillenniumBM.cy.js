@@ -48,7 +48,7 @@ describe('Home Page menu testing - righ top corner', () => {
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_FOOTER_2023_ div.mds.bm-nav-footer__btm").scrollIntoView();
   })
 })
-describe("Secon menu test", () => {
+describe("Second menu test", () => {
   it("Style kontenera", () => {
     cy.get("header.mds.bm-menu-header").as("secondMenu");
     cy.get("@secondMenu").should("have.css", "padding-top", "24px");
@@ -107,9 +107,59 @@ describe("Secon menu test", () => {
     cy.get("@loginButton").should("have.css", "font-size", "16px");
     cy.get("@loginButton").should("have.css", "line-height", "24px");
   })
-  // it("Style - modal", () => {
+  it("Style - kurtyna - wyszukiwarka", () => {
+    cy.get('header.mds.bm-menu-header div.mds.bm-menu-header__right button.mds.bm-search-login__btn.desktop-only').click();
+    cy.get("div.mds.bm-menu-search.desktop-only div.bm-search-curtain__curtain-container").as("styleKurtyna");
+    cy.get("@styleKurtyna").should("have.css", "opacity", "1");
+    cy.get("@styleKurtyna").should("have.css", "transform", "matrix(1, 0, 0, 1, -960, 0)");
+    cy.get("@styleKurtyna").should("have.css", "box-shadow", "rgba(46, 46, 46, 0.1) 0px 20px 20px 0px");
+    cy.get("@styleKurtyna").should("have.css", "position", "absolute");
+    cy.get("@styleKurtyna").should("have.css", "left", "0px");
+    cy.get("@styleKurtyna").should("have.css", "right", "0px");
+    cy.get("@styleKurtyna").should("have.css", "display", "flex");
+    cy.get("@styleKurtyna").should("have.css", "place-content", "center");
+    cy.get("@styleKurtyna").should("have.css", "background", "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box");
+    cy.get("@styleKurtyna").should("have.css", "transition", "transform 0.3s, opacity 0.3s");
+    cy.get("@styleKurtyna").should("have.css", "width", "1920px");
+    cy.get("@styleKurtyna").should("have.css", "margin-left", "800px");
+  })
+  it("Style modal zaloguj", () => {
+    it("Style kontenera", () => {
+      cy.get("mds.bm-modal  bm-modal-col-d-8.bm-modal-double__container").as("modalContainer");
+      cy.get("@modalContainer").should("have.css", "max-width", "1060px");
+      cy.get("@modalContainer").should("have.css", "animation", "scale-up 0.4s fade-in 0.4s forwards");
+      cy.get("@modalContainer").should("have.css", "z-index", "999");
+      cy.get("@modalContainer").should("have.css", "z-index", "999");
+      cy.get("@modalContainer").should("have.css", "background-color", "rgb(255, 255, 255)");
+      cy.get("@modalContainer").should("have.css", "border-radius", "10px");
+      cy.get("@modalContainer").should("have.css", "border", "0px");
+      cy.get("@modalContainer").should("have.css", "height", "fit-content");
+      cy.get("@modalContainer").should("have.css", "margin", "auto");
+      cy.get("@modalContainer").should("have.css", "padding", "40px");
+    })
+    it("Style boxów", () => {
+      cy.get("dialog.mds.bm-modal.bm-modal-col-d-8.bm-modal-double__container div.mds.bm-modal-double__content h2").first().as("boxHeaderLeft");
+      cy.get("@boxHeaderLeft").should("have.css", "margin-top", "20px");
+      cy.get("@boxHeaderLeft").should("have.css", "margin-bottom", "20px");
+      cy.get("@boxHeaderLeft").should("have.css", "font-size", "24px");
+      cy.get("@boxHeaderLeft").should("have.css", "line-height", "32px");
 
-  // })
+      cy.get("dialog.mds.bm-modal.bm-modal-col-d-8.bm-modal-double__container div.mds.bm-modal-double__content h2").eq(1).as("boxHeaderRight");
+      cy.get("@boxHeaderRight").should("have.css", "margin-top", "20px");
+      cy.get("@boxHeaderRight").should("have.css", "margin-bottom", "20px");
+      cy.get("@boxHeaderRight").should("have.css", "font-size", "24px");
+      cy.get("@boxHeaderRight").should("have.css", "line-height", "32px");
+      
+      cy.get("dialog.mds.bm-modal.bm-modal-col-d-8.bm-modal-double__container div.bm-modal__buttons.bm-modal__buttons--centered").as("buttonLeft");
+      cy.get("@buttonLeft").should("have.css", "margin-bottom", "20px");
+      cy.get("@buttonLeft").should("have.css", "padding", "40px 40px 20px");
+
+      cy.get("dialog.mds.bm-modal.bm-modal-col-d-8.bm-modal-double__container div.bm-modal__buttons.bm-modal__buttons--centered").as("buttonRight");
+      cy.get("@buttonRight").should("have.css", "margin-bottom", "20px");
+      cy.get("@buttonRight").should("have.css", "padding", "40px 40px 20px");
+
+    })
+  })
 })
 describe("Second menu test - search", () => {
   it("Test Search login", ()=> {
