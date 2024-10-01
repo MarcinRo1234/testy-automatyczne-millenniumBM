@@ -390,7 +390,7 @@ describe("Komunikaty i ogłoszenia - test", () => {
   })
 })
 
-describe.only("Footer test", () => {
+describe("Footer test", () => {
   it("Style kontenera", () => {
     cy.get("div#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_FOOTER_2023_ nav.mds.bm-nav-footer.bm-container").as("footerStyle");
     cy.get("@footerStyle").should("have.css", "max-width", "1600px");
